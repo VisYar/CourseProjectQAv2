@@ -171,42 +171,6 @@ public class UICardTest {
         checkNumberPayment(initialNumberPayment, 0);
     }
 
-//    @Test
-//    @DisplayName("Seventeen digits card number")
-//    public void shouldErrorSeventeenDigitsNumber() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.seventeenDigitsNumber();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        notDenialMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-
-//    @Test
-//    @DisplayName("Latin letters card number")
-//    public void shouldErrorLatinLettersCardNumber() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.latinNumber();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        notDenialMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-//
-//    @Test
-//    @DisplayName("Symbols card number")
-//    public void shouldErrorSymbolsNumber() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.symbolsNumber();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        notDenialMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-
     @Test
     @DisplayName("Empty month")
     public void shouldErrorEmptyMonth() {
@@ -279,29 +243,6 @@ public class UICardTest {
         checkNumberPayment(initialNumberPayment, 0);
     }
 
-//    @Test
-//    @DisplayName("Latin Letters Month")
-//    public void shouldErrorLatinLettersMonth() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.latinLettersMonth();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-//
-//
-//    @Test
-//    @DisplayName("Symbols In Month")
-//    public void shouldErrorSymbolsMonth() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.symbolsMonth();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-
     @Test
     @DisplayName("Year more than five")
     public void shouldErrorIfYearMoreThan5() {
@@ -326,17 +267,6 @@ public class UICardTest {
         checkNumberPayment(initialNumberPayment, 0);
     }
 
-//    @Test
-//    @DisplayName("Latin Letters Year")
-//    public void shouldErrorLatinLettersYear() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.latinLettersYear();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-
     @Test
     @DisplayName("Zero year")
     public void shouldErrorZeroYear() {
@@ -348,17 +278,6 @@ public class UICardTest {
         notDenialMessage();
         checkNumberPayment(initialNumberPayment, 0);
     }
-
-//    @Test
-//    @DisplayName("Symbols Year")
-//    public void shouldErrorSymbolsYear() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.symbolsYear();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
 
     @Test
     @DisplayName("Empty owner")
@@ -467,37 +386,4 @@ public class UICardTest {
         notDenialMessage();
         checkNumberPayment(initialNumberPayment, 0);
     }
-
-//    @Test
-//    @DisplayName("four digits CVC")
-//    public void shouldErrorFourDigitsCVC() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.fourDigitsCVC();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-//
-//    @Test
-//    @DisplayName("Latin Letters CVC")
-//    public void shouldErrorLatinLettersCVC() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.latinLettersCVC();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
-//
-//    @Test
-//    @DisplayName("Symbols In CVC Field")
-//    public void shouldErrorSymbolsCVC() {
-//        long initialNumberPayment = numberFromPayment();
-//        var card = choicePaymentCard();
-//        card.symbolsCVC();
-//        errorFormat.shouldBe(Condition.visible);
-//        notPositiveMessage();
-//        checkNumberPayment(initialNumberPayment, 0);
-//    }
 }
