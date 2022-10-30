@@ -102,36 +102,36 @@ public class PaymentCard {
         buttonContinue.click();
     }
 
-    public void seventeenDigitsNumber() {
-        cardNumber.setValue(Helper.getRandomSeventeenNumber());
-        validMonth();
-        validYear();
-        validOwner();
-        validCVC();
-        buttonContinue.click();
-    }
+//    public void seventeenDigitsNumber() {
+//        cardNumber.setValue(Helper.getRandomSeventeenNumber());
+//        validMonth();
+//        validYear();
+//        validOwner();
+//        validCVC();
+//        buttonContinue.click();
+//    }
+//
+//    public void latinNumber() {
+//        cardNumber.setValue(Helper.getRandomNumberWithLetter());
+//        validMonth();
+//        validYear();
+//        validOwner();
+//        validCVC();
+//        buttonContinue.click();
+//    }
+//
+//    public void symbolsNumber() {
+//        cardNumber.setValue(Helper.getRandomSymbolNumber());
+//        validMonth();
+//        validYear();
+//        validOwner();
+//        validCVC();
+//        buttonContinue.click();
+//    }
 
-    public void latinNumber() {
-        cardNumber.setValue(Helper.getRandomNumberWithLetter());
-        validMonth();
-        validYear();
-        validOwner();
-        validCVC();
-        buttonContinue.click();
-    }
-
-    public void symbolsNumber() {
-        cardNumber.setValue(Helper.getRandomSymbolNumber());
-        validMonth();
-        validYear();
-        validOwner();
-        validCVC();
-        buttonContinue.click();
-    }
-
-    public void emptyYear() {
+    public void emptyMonth() {
         validNumber();
-        validMonth();
+        validYear();
         validOwner();
         validCVC();
         buttonContinue.click();
@@ -164,24 +164,31 @@ public class PaymentCard {
         buttonContinue.click();
     }
 
-    public void latinLettersMonth() {
+//    public void latinLettersMonth() {
+//        validNumber();
+//        cardMonth.setValue(Helper.getRandomLetterMonth());
+//        validYear();
+//        validOwner();
+//        validCVC();
+//        buttonContinue.click();
+//    }
+//
+//    public void symbolsMonth() {
+//        validNumber();
+//        cardMonth.setValue(Helper.getSymbolMonth());
+//        validYear();
+//        validOwner();
+//        validCVC();
+//        buttonContinue.click();
+//    }
+
+    public void emptyYear() {
         validNumber();
-        cardMonth.setValue(Helper.getRandomLetterMonth());
-        validYear();
+        validMonth();
         validOwner();
         validCVC();
         buttonContinue.click();
     }
-
-    public void symbolsMonth() {
-        validNumber();
-        cardMonth.setValue(Helper.getSymbolMonth());
-        validYear();
-        validOwner();
-        validCVC();
-        buttonContinue.click();
-    }
-
     public void yearMoreThanFive() {
         validNumber();
         validMonth();
@@ -219,23 +226,23 @@ public class PaymentCard {
     }
 
 
-    public void latinLettersYear() {
-        validNumber();
-        validMonth();
-        cardYear.setValue(Helper.getRandomLetterYear());
-        validOwner();
-        validCVC();
-        buttonContinue.click();
-    }
-
-    public void symbolsYear() {
-        validNumber();
-        validMonth();
-        cardYear.setValue(Helper.getRandomSymbolsYear());
-        validOwner();
-        validCVC();
-        buttonContinue.click();
-    }
+//    public void latinLettersYear() {
+//        validNumber();
+//        validMonth();
+//        cardYear.setValue(Helper.getRandomLetterYear());
+//        validOwner();
+//        validCVC();
+//        buttonContinue.click();
+//    }
+//
+//    public void symbolsYear() {
+//        validNumber();
+//        validMonth();
+//        cardYear.setValue(Helper.getRandomSymbolsYear());
+//        validOwner();
+//        validCVC();
+//        buttonContinue.click();
+//    }
 
     public void emptyOwner() {
         validNumber();
@@ -315,30 +322,30 @@ public class PaymentCard {
         buttonContinue.click();
     }
 
-    public void fourDigitsCVC() {
-        validNumber();
-        validMonth();
-        validYear();
-        validOwner();
-        cardCVC.setValue(Helper.getFourSymbolsCVC());
-        buttonContinue.click();
-    }
-
-    public void latinLettersCVC() {
-        validNumber();
-        validMonth();
-        validYear();
-        validOwner();
-        cardCVC.setValue(Helper.getRandomLetterCVC());
-        buttonContinue.click();
-    }
-
-    public void symbolsCVC() {
-        validNumber();
-        validMonth();
-        validYear();
-        validOwner();
-        cardCVC.setValue(Helper.getSymbolsCVC());
-        buttonContinue.click();
-    }
+//    public void fourDigitsCVC() {
+//        validNumber();
+//        validMonth();
+//        validYear();
+//        validOwner();
+//        cardCVC.setValue(Helper.getFourSymbolsCVC());
+//        buttonContinue.click();
+//    }
+//
+//    public void latinLettersCVC() {
+//        validNumber();
+//        validMonth();
+//        validYear();
+//        validOwner();
+//        cardCVC.setValue(Helper.getRandomLetterCVC());
+//        buttonContinue.click();
+//    }
+//
+//    public void symbolsCVC() {
+//        validNumber();
+//        validMonth();
+//        validYear();
+//        validOwner();
+//        cardCVC.setValue(Helper.getSymbolsCVC());
+//        buttonContinue.click();
+//    }
 }
