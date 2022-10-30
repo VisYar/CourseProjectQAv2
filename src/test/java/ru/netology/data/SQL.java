@@ -1,43 +1,67 @@
 package ru.netology.data;
+
 import lombok.SneakyThrows;
+import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 
 public class SQL {
-    String url = System.getProperty("db.url");
-    String user = System.getProperty("db.user");
-    String password = System.getProperty("db.password");
+    private static QueryRunner runner = new QueryRunner();
+
+    private static String url = System.getProperty("db.url");
+    private static String user = System.getProperty("db.user");
+    private static String password = System.getProperty("db.password");
 
     @SneakyThrows
-    public String getStatusPayment() {
-        QueryRunner runner = new QueryRunner();
-        String dataSQL = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
-        String status;
-        try (
-                Connection connection = DriverManager.getConnection(
-                        url, user, password
-                )
-        ) {
-            status = runner.query(connection, dataSQL, new ScalarHandler<>());
+    public static Connection connection() {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            conn = DriverManager.getConnection(System.getProperty("db.urlpostgresql"), user, password);
         }
-        return status;
+        return conn;
     }
 
     @SneakyThrows
-    public long getNumberOfPayment() {
-        QueryRunner runner = new QueryRunner();
-        String dataSQL = "SELECT COUNT(transaction_id) FROM payment_entity";
-        long number = 0;
-        try (
-                Connection connection = DriverManager.getConnection(
-                        url, user, password
-                )
-        ) {
-            number = runner.query(connection, dataSQL, new ScalarHandler<>());
-        }
-        return number;
+    public static void clear() {
+        val deletePayment = "DELETE FROM payment_entity;";
+        val deleteCredit = "DELETE FROM credit_request_entity;";
+        val deleteOrder = "DELETE FROM order_entity;";
+        runner.update(connection(), deletePayment);
+        runner.update(connection(), deleteCredit);
+        runner.update(connection(), deleteOrder);
+    }
+
+    @SneakyThrows
+    public static String getStatusPayment() {
+        val sql = "SELECT status FROM payment_entity;";
+        return runner.query(connection(), sql, new ScalarHandler<>());
+    }
+
+    @SneakyThrows
+    public static String getStatusCredit() {
+        val status = "SELECT status FROM credit_request_entity;";
+        return runner.query(connection(), status, new ScalarHandler<>());
+    }
+
+    @SneakyThrows
+    public static long getPaymentCount() {
+        val sql = "SELECT COUNT(id) as count FROM payment_entity;";
+        return runner.query(connection(), sql, new ScalarHandler<>());
+    }
+
+    @SneakyThrows
+    public static long getCreditCount() {
+        val sql = "SELECT COUNT(id) as count FROM credit_request_entity;";
+        return runner.query(connection(), sql, new ScalarHandler<>());
+    }
+
+    @SneakyThrows
+    public static long getOrderCount() {
+        val sql = "SELECT COUNT(id) as count FROM order_entity;";
+        return runner.query(connection(), sql, new ScalarHandler<>());
     }
 }
