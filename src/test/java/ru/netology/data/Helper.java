@@ -61,17 +61,17 @@ public class Helper {
         return faker.numerify("#### #### #### ###");
     }
 
-    public static String getRandomSeventeenNumber() {
-        return faker.numerify("#### #### #### #### #");
-    }
-
-    public static String getRandomNumberWithLetter() {
-        return faker.bothify("#### #### ???? ????");
-    }
-
-    public static String getRandomSymbolNumber() {
-        return ("!@#$ %^&* 3333 4444");
-    }
+//    public static String getRandomSeventeenNumber() {
+//        return faker.numerify("#### #### #### #### #");
+//    }
+//
+//    public static String getRandomNumberWithLetter() {
+//        return faker.bothify("#### #### ???? ????");
+//    }
+//
+//    public static String getRandomSymbolNumber() {
+//        return ("!@#$ %^&* 3333 4444");
+//    }
 
     public static String getZeroMonth() {
         return "00";
@@ -85,16 +85,16 @@ public class Helper {
         return faker.numerify("#");
     }
 
-    public static String getRandomLetterMonth() {
-        return fakerEn.bothify("??");
-    }
-
-    public static String getSymbolMonth() {
-        return "#$";
-    }
+//    public static String getRandomLetterMonth() {
+//        return fakerEn.bothify("??");
+//    }
+//
+//    public static String getSymbolMonth() {
+//        return "#$";
+//    }
 
     public static String getPastYear() {
-        String[] years = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
+        String[] years = {"00","01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
                 "15", "16", "17", "18", "19", "20", "21"};
         return years[random.nextInt(years.length)];
     }
@@ -113,13 +113,13 @@ public class Helper {
         return faker.numerify("#");
     }
 
-    public static String getRandomLetterYear() {
-        return faker.bothify("?#");
-    }
-
-    public static String getRandomSymbolsYear() {
-        return ("*-");
-    }
+//    public static String getRandomLetterYear() {
+//        return faker.bothify("?#");
+//    }
+//
+//    public static String getRandomSymbolsYear() {
+//        return ("*-");
+//    }
 
     public static String getQuantitySymbolOwner(String count) {
         return fakerEn.letterify(count).toUpperCase();
@@ -152,15 +152,15 @@ public class Helper {
         return faker.numerify("##");
     }
 
-    public static String getFourSymbolsCVC() {
-        return faker.numerify("##");
-    }
-
-    public static String getRandomLetterCVC() {
-        return faker.bothify("?#?");
-    }
-
-    public static String getSymbolsCVC() {
-        return ("*-+");
-    }
+//    public static String getFourSymbolsCVC() {
+//        return faker.numerify("##");
+//    }
+//
+//    public static String getRandomLetterCVC() {
+//        return faker.bothify("?#?");
+//    }
+//
+//    public static String getSymbolsCVC() {
+//        return ("*-+");
+//    }
 }
