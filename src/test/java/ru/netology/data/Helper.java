@@ -1,4 +1,5 @@
 package ru.netology.data;
+
 import com.github.javafaker.Faker;
 
 import java.time.LocalDate;
@@ -15,11 +16,14 @@ public class Helper {
     private static Faker fakerEn = new Faker(new Locale("En"));
     private static Faker fakerRu = new Faker(new Locale("Ru"));
 
-    /**Валидные данные**/
+    /**
+     * Валидные данные
+     **/
 
     public static String getApprovedNumber() {
         return "1111 2222 3333 4444";
     }
+
     public static String getMonth() {
         String[] months = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
         return months[random.nextInt(months.length)];
@@ -30,8 +34,8 @@ public class Helper {
     }
 
     public static String getEnOwner() {
-        var randomFirstName = faker.name().firstName();
-        var randomLastName = faker.name().lastName();
+        var randomFirstName = fakerEn.name().firstName();
+        var randomLastName = fakerEn.name().lastName();
         return randomFirstName + " " + randomLastName;
     }
 
@@ -39,7 +43,9 @@ public class Helper {
         return valueOf(faker.number().numberBetween(100, 999));
     }
 
-    /**Невалидные данные**/
+    /**
+     * Невалидные данные
+     **/
 
     public static String getDeclinedNumber() {
         return "5555 6666 7777 8888";
@@ -74,7 +80,7 @@ public class Helper {
     }
 
     public static String getPastYear() {
-        String[] years = {"00","01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
+        String[] years = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
                 "15", "16", "17", "18", "19", "20", "21"};
         return years[random.nextInt(years.length)];
     }
@@ -114,7 +120,6 @@ public class Helper {
     public static String getOneWordOwner() {
         return fakerRu.name().firstName();
     }
-
 
     public static String getOneSymbolCVC() {
         return faker.numerify("#");
